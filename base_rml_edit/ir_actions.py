@@ -35,7 +35,7 @@ class report_xml(osv.osv):
         return res
 
     def _report_content_txt_inv(self, cr, uid, id, name, value, arg, context=None):
-	self.write(cr,uid,id,{'report_rml_content':str(value)},context=context)
+	self.write(cr,uid,id,{'report_rml_content':value.encode('utf-8')},context=context)
     
     
     _name = 'ir.actions.report.xml'
